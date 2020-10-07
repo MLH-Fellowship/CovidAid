@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
-
+    viewBinding.enabled = true
     defaultConfig {
         applicationId "com.bit_loons.covidaid"
         minSdkVersion 21
@@ -29,5 +29,21 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //image fetching
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    //material buttons
+    implementation 'com.github.medyo:fancybuttons:1.9.1'
+
+    //cardviews
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //material EditText
+    implementation 'com.github.HITGIF:TextFieldBoxes:1.4.5'
+
+    //HTTP Client
+    implementation 'com.squareup.okhttp3:okhttp:4.7.2'
 
 }
