@@ -1,1 +1,0 @@
-# CovidAid - (Backend)
