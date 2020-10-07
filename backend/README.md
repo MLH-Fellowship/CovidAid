@@ -46,3 +46,15 @@ $ flask db upgrade
 ```shell
 $ flask run
 ```
+
+### Notes while developing
+
+1. If you make changes to the models ensure that you run
+
+```shell
+$ flask db migrate
+$ flask db upgrade
+```
+to reflect the changes to the database
+
+2. Use `black` to format all the files.
