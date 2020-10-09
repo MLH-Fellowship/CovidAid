@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/tvDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -48,7 +48,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
-                android:id="@+id/text_field_boxes2"
+                android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -59,7 +59,7 @@
                 app:labelText="Name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription"
                 app:primaryColor="@color/colorGreenActive"
                 app:useDenseSpacing="true">
 
@@ -75,7 +75,7 @@
             </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
 
             <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
-                android:id="@+id/text_field_boxes3"
+                android:id="@+id/etContact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -86,7 +86,7 @@
                 app:labelText="Contact Number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_field_boxes2"
+                app:layout_constraintTop_toBottomOf="@+id/etName"
                 app:primaryColor="@color/colorGreenActive"
                 app:useDenseSpacing="true">
 
@@ -102,7 +102,7 @@
             </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
 
             <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
-                android:id="@+id/text_field_boxes1"
+                android:id="@+id/etAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -113,7 +113,7 @@
                 app:labelText="Address, Landmark"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_field_boxes3"
+                app:layout_constraintTop_toBottomOf="@+id/etContact"
                 app:primaryColor="@color/colorGreenActive"
                 app:useDenseSpacing="true">
 
@@ -130,7 +130,7 @@
 
             <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
                 android:visibility="visible"
-                android:id="@+id/text_field_boxe"
+                android:id="@+id/etLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -142,7 +142,7 @@
                 app:iconSignifier="@drawable/ic_location"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_field_boxes1"
+                app:layout_constraintTop_toBottomOf="@+id/etAddress"
                 app:primaryColor="@color/colorGreenActive"
                 app:useDenseSpacing="true">
 
@@ -169,10 +169,10 @@
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_field_boxe" />
+                app:layout_constraintTop_toBottomOf="@+id/etLocation" />
 
             <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
-                android:id="@+id/text_field_bo"
+                android:id="@+id/etSubject"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -199,7 +199,7 @@
             </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
 
             <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
-                android:id="@+id/text_fiesld_bo"
+                android:id="@+id/etDescription"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
                 android:layout_marginStart="20dp"
@@ -210,7 +210,7 @@
                 app:labelText="Description"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_field_bo"
+                app:layout_constraintTop_toBottomOf="@+id/etSubject"
                 app:primaryColor="@color/colorGreenActive"
                 app:useDenseSpacing="true">
 
@@ -218,35 +218,28 @@
                     android:id="@+id/et_seqssquestionans"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
-                    android:lines="1"
-                    android:maxLines="1"
-                    android:singleLine="true"
                     android:textStyle="bold" />
             </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
 
-            <mehdi.sakout.fancybuttons.FancyButton
-                android:id="@+id/btn_continue"
+            <Button
+                android:id="@+id/btnSendRequest"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginBottom="16dp"
                 android:paddingLeft="20dp"
                 android:paddingTop="10dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_fiesld_bo"
-                fancy:fb_borderColor="#FFFFFF"
-                fancy:fb_borderWidth="1dp"
-                fancy:fb_defaultColor="@color/colorGreenActive"
-                fancy:fb_focusColor="@color/colorGrey"
-                fancy:fb_iconPosition="left"
-                fancy:fb_radius="5dp"
-                fancy:fb_text="SEND REQUEST"
-                fancy:fb_textColor="#FFFFFF" />
+                app:layout_constraintTop_toBottomOf="@+id/etDescription"
+                android:text="Post Request"
+                android:backgroundTint="@color/colorGreenActive"
+                android:textColor="@color/colorWhite"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 

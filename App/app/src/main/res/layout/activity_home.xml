@@ -33,7 +33,7 @@
         app:srcCompat="@drawable/ic_header3" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnNeedHelp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -51,24 +51,24 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnHelpOthers"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/colorGreenActive"
-        android:padding="16dp"
-        android:textSize="16sp"
-        android:text="I would like to Help"
         android:drawableEnd="@drawable/ic_arrow_right_24"
+        android:padding="16dp"
+        android:text="I would like to Help"
         android:textColor="@color/colorWhite"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnNeedHelp" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnHistory"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -82,10 +82,10 @@
         android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/btnHelpOthers" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnLeaderBoard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -99,6 +99,6 @@
         android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/btnHistory" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

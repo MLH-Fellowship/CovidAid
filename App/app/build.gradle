@@ -3,7 +3,9 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
-    viewBinding.enabled = true
+    buildFeatures {
+        viewBinding = true
+    }
     defaultConfig {
         applicationId "com.bit_loons.covidaid"
         minSdkVersion 21
@@ -30,6 +32,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'com.google.android.material:material:1.2.1'
 
     //image fetching
     implementation 'com.github.bumptech.glide:glide:4.11.0'
