@@ -27,6 +27,21 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
+#  Models
+class Task(UserMixin, db.Model):
+    __tablename__ = "tasks"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), nullable=False)
+    contact_number = db.Column(db.String(20), nullable=False)
+    location = db.Column(db.String(80), nullable=False)
+    address = db.Column(db.String(200), nullable=False)
+    subject = db.Column(db.String(150), nullable=False)
+    description = db.Column(db.String(250), nullable=False)
+    help_seeker=db.Column(db.Integer, db.ForeignKey('users.id'),nullable=False)
+    helper=db.Column(db.Integer, db.ForeignKey('users.id'),nullable=True)
+
+
 
 # Schema
 class UserSchema(ma.SQLAlchemyAutoSchema):
@@ -35,3 +50,12 @@ class UserSchema(ma.SQLAlchemyAutoSchema):
         model = User
         include_relationships = True
         include_fk = True
+
+# Schema
+class TaskSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        load_instance = True
+        model = User
+        include_relationships = True
+        include_fk = True
+
