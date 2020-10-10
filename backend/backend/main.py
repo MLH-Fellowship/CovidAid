@@ -1,6 +1,6 @@
 from flask import current_app as app
 from flask import abort, request
-from flask_login import LoginManager, current_user, login_user
+from flask_login import LoginManager, current_user, login_user,login_required
 from werkzeug.security import generate_password_hash
 from .models import User
 from . import db, login_manager
