@@ -7,11 +7,12 @@ from flask_login import (
     logout_user,
     login_required,
 )
+from sqlalchemy import desc
 from werkzeug.security import generate_password_hash
 from .models import User, Task
 from . import db, login_manager
 from .utils import bad, good
-from .schemas import user_schema, tasks_schema, task_schema
+from .schemas import user_schema, tasks_schema, task_schema, users_schema
 
 
 @login_manager.user_loader
@@ -227,8 +228,15 @@ def complete_request():
     else:
         return bad("The request does not exist!"), 404
 
+
 @app.route("/request_history", methods=["POST"])
 @login_required
 def request_history():
     history = Task.query.filter_by(id=current_user.id).all()
     return tasks_schema.dumps(history)
+
+
+@app.route("/leaderboard", methods=["POST"])
+def leaderboard():
+    top_users = User.query.order_by(desc(User.points)).all()
+    return users_schema.dumps(top_users), 200

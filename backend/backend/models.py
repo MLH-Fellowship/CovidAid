@@ -46,7 +46,6 @@ class Task(UserMixin, db.Model):
     status = db.Column(db.String(30), default="waiting")
 
 
-
 # Schema
 class UserSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
