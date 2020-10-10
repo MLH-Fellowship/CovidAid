@@ -54,6 +54,6 @@ class UserSchema(ma.SQLAlchemyAutoSchema):
 class TaskSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         load_instance = True
-        model = User
+        model = Task
         include_relationships = True
         include_fk = True

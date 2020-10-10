@@ -11,7 +11,7 @@ from werkzeug.security import generate_password_hash
 from .models import User, Task
 from . import db, login_manager
 from .utils import bad, good
-from .schemas import user_schema
+from .schemas import user_schema, tasks_schema
 
 
 @login_manager.user_loader
@@ -120,3 +120,17 @@ def new_request():
     db.session.add(task)
     db.session.commit()
     return good("Help registered!"), 200
+
+
+@app.route("/all_requests", methods=["POST"])
+@login_required
+def all_requests():
+    try:
+        location = request.json["location"]
+    except KeyError:
+        bad(
+            "Error decoding JSON, ensure that the JSON has all the required fields"
+        ), 400
+
+    all_requests = Task.query.filter_by(location=location).all()
+    return tasks_schema.dumps(all_requests)
