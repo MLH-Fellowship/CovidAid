@@ -66,15 +66,19 @@ def register():
         else:
             return bad('User does not exist!', 404)
 
-@app.route("/profile", methods=["POST"])
-def get_profile():
-    try:
-        email = request.json["email"]
-    except KeyError:
-        bad("Error decoding JSON, ensure that the JSON has all the required fields"), 400
-    
-    user=User.query.filter_by(email=email).first();
+@app.route("/logout", methods=["POST", "GET"])
+@login_required
+def logout():
+    if request.method == "GET":
+        abort(404)
 
-    if(user is not None):
-        return good(user_schema.dump(user)),200
+    if request.method == "POST":
+        logout_user()
+        return good("User logged out!"), 200
+
+@app.route("/profile", methods=["POST"])
+@login_required
+def profile():
+    if(current_user is not None):
+        return good(user_schema.dump(current_user)),200
     return bad("User does not exist!"), 400
