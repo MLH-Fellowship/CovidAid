@@ -41,6 +41,10 @@ class Task(UserMixin, db.Model):
     help_seeker = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     helper = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=True)
 
+    # waiting, accepted, cancelled and completed
+    status = db.Column(db.String(30), default="waiting")
+
+
 
 # Schema
 class UserSchema(ma.SQLAlchemyAutoSchema):

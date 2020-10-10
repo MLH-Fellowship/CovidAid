@@ -11,7 +11,7 @@ from werkzeug.security import generate_password_hash
 from .models import User, Task
 from . import db, login_manager
 from .utils import bad, good
-from .schemas import user_schema, tasks_schema
+from .schemas import user_schema, tasks_schema, task_schema
 
 
 @login_manager.user_loader
@@ -133,4 +133,70 @@ def all_requests():
         ), 400
 
     all_requests = Task.query.filter_by(location=location).all()
-    return tasks_schema.dumps(all_requests)
+    return tasks_schema.dumps(all_requests), 200
+
+
+@app.route("/request_info", methods=["POST"])
+@login_required
+def request_info():
+    try:
+        request_id = request.json["request_id"]
+    except KeyError:
+        bad(
+            "Error decoding JSON, ensure that the JSON has all the required fields"
+        ), 400
+
+    request_object = Task.query.filter_by(id=request_id).first()
+
+    if request_object is not None:
+        return task_schema.dump(request_object), 200
+    else:
+        return bad("Request does not exist!"), 404
+
+
+@app.route("/accept_request", methods=["POST"])
+@login_required
+def accept_request():
+    try:
+        request_id = request.json["request_id"]
+        helper_id = request.json["helper_id"]
+    except KeyError:
+        bad(
+            "Error decoding JSON, ensure that the JSON has all the required fields"
+        ), 400
+
+    request_object = Task.query.filter_by(id=request_id).first()
+    print(request_object.status)
+
+    if request_object is not None:
+        request_object.status = "accepted"
+        request_object.helper = helper_id
+        db.session.add(request_object)
+        db.session.commit()
+        return good("Request accepted!"), 202
+    else:
+        return bad("The request does not exist!"), 404
+
+
+@app.route("/reject_request", methods=["POST"])
+@login_required
+def reject_request():
+    try:
+        request_id = request.json["request_id"]
+    except KeyError:
+        bad(
+            "Error decoding JSON, ensure that the JSON has all the required fields"
+        ), 400
+
+    request_object = Task.query.filter_by(id=request_id).first()
+
+    if request_object is not None:
+        if request_object.status == "accepted":
+            request_object.status = "cancelled"
+            db.session.add(request_object)
+            db.session.commit()
+            good("Request cancelled!"), 202
+        else:
+            bad("Only accepted requests can be rejected"), 400
+    else:
+        bad("The request does not exist!"), 404
