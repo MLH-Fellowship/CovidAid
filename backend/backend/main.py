@@ -92,9 +92,9 @@ def profile():
     return bad("User does not exist!"), 400
 
 
-@app.route("/askForHelp", methods=["POST"])
+@app.route("/new_request", methods=["POST"])
 @login_required
-def askForHelp():
+def new_request():
     try:
         name = request.json["name"]
         contact_number = request.json["contact_number"]
