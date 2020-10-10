@@ -5,6 +5,7 @@ from werkzeug.security import generate_password_hash
 from .models import User
 from . import db, login_manager
 from .utils import bad, good
+from .schemas import user_schema
 
 
 @login_manager.user_loader
@@ -64,3 +65,16 @@ def register():
                 return bad('Incorrect Password!', 401)
         else:
             return bad('User does not exist!', 404)
+
+@app.route("/profile", methods=["POST"])
+def get_profile():
+    try:
+        email = request.json["email"]
+    except KeyError:
+        bad("Error decoding JSON, ensure that the JSON has all the required fields"), 400
+    
+    user=User.query.filter_by(email=email).first();
+
+    if(user is not None):
+        return good(user_schema.dump(user)),200
+    return bad("User does not exist!"), 400
