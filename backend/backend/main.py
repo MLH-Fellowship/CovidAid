@@ -83,9 +83,10 @@ def logout():
         logout_user()
         return good("User logged out!"), 200
 
+
 @app.route("/profile", methods=["POST"])
 @login_required
 def profile():
-    if(current_user is not None):
-        return good(user_schema.dump(current_user)),200
+    if current_user is not None:
+        return good(user_schema.dump(current_user)), 200
     return bad("User does not exist!"), 400
