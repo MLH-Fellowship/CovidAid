@@ -8,7 +8,7 @@ from flask_login import (
     login_required,
 )
 from werkzeug.security import generate_password_hash
-from .models import User,Task
+from .models import User, Task
 from . import db, login_manager
 from .utils import bad, good
 from .schemas import user_schema
@@ -87,33 +87,36 @@ def logout():
 @app.route("/profile", methods=["POST"])
 @login_required
 def profile():
-    if(current_user is not None):
-        return good(user_schema.dump(current_user)),200
+    if current_user is not None:
+        return good(user_schema.dump(current_user)), 200
     return bad("User does not exist!"), 400
 
-@app.route("/askForHelp",methods=["POST"])
+
+@app.route("/askForHelp", methods=["POST"])
 @login_required
 def askForHelp():
     try:
-        name=request.json["name"]
-        contact_number=request.json["contact_number"]
-        location=request.json["location"]
-        address=request.json["address"]
-        subject=request.json["subject"]
-        description=request.json["description"]
+        name = request.json["name"]
+        contact_number = request.json["contact_number"]
+        location = request.json["location"]
+        address = request.json["address"]
+        subject = request.json["subject"]
+        description = request.json["description"]
     except KeyError:
-        bad("Error decoding JSON, ensure that the JSON has all the required fields"), 400
+        bad(
+            "Error decoding JSON, ensure that the JSON has all the required fields"
+        ), 400
 
-    task=Task(
+    task = Task(
         name=name,
         contact_number=contact_number,
         location=location,
         address=address,
         subject=subject,
         description=description,
-        help_seeker=current_user.id
+        help_seeker=current_user.id,
     )
 
     db.session.add(task)
     db.session.commit()
-    return good('Help registered!'), 200
+    return good("Help registered!"), 200
