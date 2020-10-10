@@ -1,6 +1,12 @@
 from flask import current_app as app
 from flask import abort, request
-from flask_login import LoginManager, current_user, login_user, logout_user, login_required
+from flask_login import (
+    LoginManager,
+    current_user,
+    login_user,
+    logout_user,
+    login_required,
+)
 from werkzeug.security import generate_password_hash
 from .models import User
 from . import db, login_manager
@@ -59,11 +65,12 @@ def login():
         if user is not None:
             if user.check_password(password):
                 login_user(user)
-                return good('Logged in!'), 200
+                return good("Logged in!"), 200
             else:
-                return bad('Incorrect Password!'), 401
+                return bad("Incorrect Password!"), 401
         else:
-            return bad('User does not exist!'), 404
+            return bad("User does not exist!"), 404
+
 
 @app.route("/logout", methods=["POST", "GET"])
 @login_required
