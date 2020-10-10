@@ -195,13 +195,37 @@ def reject_request():
             request_object.status = "cancelled"
             db.session.add(request_object)
             db.session.commit()
-            good("Request cancelled!"), 202
+            return good("Request cancelled!"), 202
         else:
-            bad("Only accepted requests can be rejected"), 400
+            return bad("Only accepted requests can be rejected"), 400
     else:
-        bad("The request does not exist!"), 404
+        return bad("The request does not exist!"), 404
 
 
+@app.route("/complete_request", methods=["POST"])
+@login_required
+def complete_request():
+    try:
+        request_id = request.json["request_id"]
+    except KeyError:
+        bad(
+            "Error decoding JSON, ensure that the JSON has all the required fields"
+        ), 400
+
+    request_object = Task.query.filter_by(id=request_id).first()
+    helper_object = User.query.filter_by(id=request_object.helper).first()
+
+    if request_object is not None:
+        if request_object.status == "accepted":
+            request_object.status = "completed"
+            helper_object.points = helper_object.points + 1
+            db.session.add(request_object, helper_object)
+            db.session.commit()
+            return good("Request completed!"), 202
+        else:
+            return bad("Only accepted requests can be completed"), 400
+    else:
+        return bad("The request does not exist!"), 404
 
 @app.route("/request_history", methods=["POST"])
 @login_required
