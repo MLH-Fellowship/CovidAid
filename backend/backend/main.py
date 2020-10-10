@@ -83,6 +83,7 @@ def logout():
         logout_user()
         return good("User logged out!"), 200
 
+
 @app.route("/profile", methods=["POST"])
 @login_required
 def profile():
