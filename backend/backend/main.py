@@ -200,3 +200,11 @@ def reject_request():
             bad("Only accepted requests can be rejected"), 400
     else:
         bad("The request does not exist!"), 404
+
+
+
+@app.route("/request_history", methods=["POST"])
+@login_required
+def request_history():
+    history = Task.query.filter_by(id=current_user.id).all()
+    return tasks_schema.dumps(history)
