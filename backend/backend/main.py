@@ -61,9 +61,9 @@ def login():
                 login_user(user)
                 return good('Logged in!'), 200
             else:
-                return bad('Incorrect Password!', 401)
+                return bad('Incorrect Password!'), 401
         else:
-            return bad('User does not exist!', 404)
+            return bad('User does not exist!'), 404
 
 @app.route("/logout", methods=["POST", "GET"])
 @login_required
