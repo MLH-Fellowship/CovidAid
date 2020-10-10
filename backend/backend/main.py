@@ -1,6 +1,6 @@
 from flask import current_app as app
 from flask import abort, request
-from flask_login import LoginManager, current_user, login_user
+from flask_login import LoginManager, current_user, login_user, logout_user, login_required
 from werkzeug.security import generate_password_hash
 from .models import User
 from . import db, login_manager
@@ -41,7 +41,7 @@ def signup():
 
 
 @app.route("/login", methods=["POST", "GET"])
-def register():
+def login():
     if request.method == "GET":
         abort(404)
 
@@ -64,3 +64,13 @@ def register():
                 return bad('Incorrect Password!', 401)
         else:
             return bad('User does not exist!', 404)
+
+@app.route("/logout", methods=["POST", "GET"])
+@login_required
+def logout():
+    if request.method == "GET":
+        abort(404)
+
+    if request.method == "POST":
+        logout_user()
+        return good("User logged out!"), 200
