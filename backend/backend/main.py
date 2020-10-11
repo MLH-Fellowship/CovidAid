@@ -126,14 +126,12 @@ def new_request():
 @app.route("/all_requests", methods=["POST"])
 @login_required
 def all_requests():
-    try:
+    if (request.json) is not None:
         location = request.json["location"]
-    except KeyError:
-        bad(
-            "Error decoding JSON, ensure that the JSON has all the required fields"
-        ), 400
+        all_requests = Task.query.filter_by(location=location).all()
+    else:
+        all_requests = Task.query.all()
 
-    all_requests = Task.query.filter_by(location=location).all()
     return tasks_schema.dumps(all_requests), 200
 
 
