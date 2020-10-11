@@ -58,9 +58,29 @@ Send:
 Send:
 ```json
 {
+	#Optional
 	"location": "Mars"
 }
 ```
+
+Receive if **optional "location" was sent**:
+
+```json
+{
+	#Requests, location wise
+	...
+}
+```
+
+Receive if called directly:
+
+```json
+{
+	#All Requests
+	...
+}
+```
+
 
 ### `POST /request_info`
 
