@@ -12,13 +12,13 @@ To make things interesting and track people's inherent kindness, we have also pr
 ## How I built it
 
 ## Challenges I ran into it
-Keeping the UI lucid and intuitive as our motto is to help people, especially the older people.
-Implementing the login functionality using Flask-Login by making use of sessions. 
+1. Keeping the UI lucid and intuitive as our motto is to help people, especially the older people.
+2. Implementing the login functionality using Flask-Login by making use of sessions. 
 ## Accomplishments that I'm proud of
 Coming up with a solution to situational problem which helps our community.
 ## What I learned
-I learnt to implement REST apis for backend services using Flask.
-Also learnt to use SQLAlchemy as the ORM tool, which makes it easy to work with database.
+1. I learnt to implement REST apis for backend services using Flask.
+2. Also learnt to use SQLAlchemy as the ORM tool, which makes it easy to work with database.
 ## What's next for CovidAid
 Implement notifications for the users whenever helper accept the request to help-seekers. This notification will be triggered for both the parties.
 
