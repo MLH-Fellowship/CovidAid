@@ -33,7 +33,6 @@ public class LogInActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
 
     private Gson gson;
-
     private OkHttpClient client;
 
     @Override
