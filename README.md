@@ -36,7 +36,9 @@ CovidAid is a community-driven platform for the people, where helpful people can
 To make things interesting and track people's inherent kindness, we have also provided a leaderboard where users can check their _kindness points_, which is something you earn when you help others.
 
 ## Screenshots
-{Coming Soon}
+![](https://github.com/NitishGadangi/CovidAid/blob/master/images/ss4.jpg?raw=true)
+![](https://github.com/NitishGadangi/CovidAid/blob/master/images/ss2.jpg?raw=true)
+![](https://github.com/NitishGadangi/CovidAid/blob/master/images/ss3.jpg?raw=true)
 
 ## How it was built
 
