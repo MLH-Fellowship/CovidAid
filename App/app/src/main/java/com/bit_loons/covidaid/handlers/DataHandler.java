@@ -4,6 +4,8 @@ import okhttp3.MediaType;
 
 public class DataHandler {
 
+    public static String COOKIE = "";
+
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     public static String BASE_URL = "http://api.awalvie.me/";

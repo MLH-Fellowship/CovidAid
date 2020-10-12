@@ -64,7 +64,7 @@
                 app:useDenseSpacing="true">
 
                 <studio.carbonylgroup.textfieldboxes.ExtendedEditText
-                    android:id="@+id/et_fullname"
+                    android:id="@+id/etGetFullname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -91,7 +91,7 @@
                 app:useDenseSpacing="true">
 
                 <studio.carbonylgroup.textfieldboxes.ExtendedEditText
-                    android:id="@+id/etGetEmail"
+                    android:id="@+id/etGetContact"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -118,10 +118,10 @@
                 app:useDenseSpacing="true">
 
                 <studio.carbonylgroup.textfieldboxes.ExtendedEditText
-                    android:id="@+id/et_get_password"
+                    android:id="@+id/etGetAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
+                    android:inputType="text"
                     android:lines="1"
                     android:maxLines="1"
                     android:singleLine="true"
@@ -147,7 +147,7 @@
                 app:useDenseSpacing="true">
 
                 <studio.carbonylgroup.textfieldboxes.ExtendedEditText
-                    android:id="@+id/et_seqquestion"
+                    android:id="@+id/etGetLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -188,7 +188,7 @@
                 app:useDenseSpacing="true">
 
                 <studio.carbonylgroup.textfieldboxes.ExtendedEditText
-                    android:id="@+id/etGetContact"
+                    android:id="@+id/etGetSubject"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -215,7 +215,7 @@
                 app:useDenseSpacing="true">
 
                 <studio.carbonylgroup.textfieldboxes.ExtendedEditText
-                    android:id="@+id/et_seqssquestionans"
+                    android:id="@+id/etGetDescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold" />
@@ -240,7 +240,19 @@
                 android:text="Post Request"
                 android:backgroundTint="@color/colorGreenActive"
                 android:textColor="@color/colorWhite"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

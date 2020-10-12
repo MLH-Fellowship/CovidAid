@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bit_loons.covidaid.databinding.ActivitySignupBinding;
 import com.bit_loons.covidaid.handlers.DataHandler;
-import com.bit_loons.covidaid.models.LogIn;
+import com.bit_loons.covidaid.handlers.OkHttpSingleton;
 import com.bit_loons.covidaid.models.LogInResponse;
 import com.bit_loons.covidaid.models.SignUp;
 import com.google.gson.Gson;
@@ -30,7 +30,8 @@ import static com.bit_loons.covidaid.handlers.DataHandler.JSON;
 
 public class SignupActivity extends AppCompatActivity {
 
-    ActivitySignupBinding binding;
+    private static final String TAG = "SignupActivity";
+    private ActivitySignupBinding binding;
     private OkHttpClient client;
     private Gson gson;
 
@@ -42,11 +43,6 @@ public class SignupActivity extends AppCompatActivity {
 
         initializeVars();
         setupListeners();
-    }
-
-    private void initializeVars() {
-        client = new OkHttpClient();
-        gson = new Gson();
     }
 
     private void setupListeners() {
@@ -61,8 +57,14 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(SignupActivity.this, LogInActivity.class));
+                finish();
             }
         });
+    }
+
+    private void initializeVars() {
+        client = OkHttpSingleton.getInstance().getClient();
+        gson = new Gson();
     }
 
     private String fetchBody() {
@@ -79,6 +81,7 @@ public class SignupActivity extends AppCompatActivity {
         binding.progressBar.setVisibility(View.VISIBLE);
         RequestBody body = RequestBody.create(bodyStr, JSON);
         Request request = new Request.Builder()
+                .addHeader("Cookie",DataHandler.COOKIE)
                 .url(url)
                 .post(body)
                 .build();
@@ -104,11 +107,12 @@ public class SignupActivity extends AppCompatActivity {
                         try {
                             LogInResponse logInResponse = gson.fromJson(response.body().string(), LogInResponse.class);
                             if (logInResponse.isLogedIn()) {
+                                makeToast("SignUp Success");
                                 nextActivity();
                             }else {
                                 makeToast(""+logInResponse.getMsg());
                             }
-                        } catch (IOException e) {
+                        } catch (Exception e) {
                             makeToast("JSON Error : Failed! Try again.");
                             e.printStackTrace();
                         }
@@ -119,7 +123,8 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void nextActivity() {
-        startActivity(new Intent(SignupActivity.this, HomeActivity.class));
+        startActivity(new Intent(SignupActivity.this, LogInActivity.class));
+        this.finish();
     }
 
     private void makeToast(String text){
