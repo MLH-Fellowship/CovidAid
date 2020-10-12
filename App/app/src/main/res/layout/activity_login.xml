@@ -57,7 +57,7 @@
         app:hasClearButton="true"
         app:helperTextColor="@color/colorGrey"
         app:iconSignifier="@drawable/ic_username"
-        app:labelText="Username"
+        app:labelText="Email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
