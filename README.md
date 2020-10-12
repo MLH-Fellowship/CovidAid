@@ -39,6 +39,7 @@ To make things interesting and track people's inherent kindness, we have also pr
 ![](https://github.com/NitishGadangi/CovidAid/blob/master/images/ss1.jpg?raw=true)
 ![](https://github.com/NitishGadangi/CovidAid/blob/master/images/ss2.jpg?raw=true)
 ![](https://github.com/NitishGadangi/CovidAid/blob/master/images/ss3.jpg?raw=true)
+![](https://github.com/NitishGadangi/CovidAid/blob/master/images/ss0.jpg?raw=true)
 
 ## How it was built
 
