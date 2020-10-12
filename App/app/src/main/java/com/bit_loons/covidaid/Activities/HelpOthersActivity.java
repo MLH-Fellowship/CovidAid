@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.bit_loons.covidaid.Adapters.HelpOthersAdapter;
-import com.bit_loons.covidaid.R;
 import com.bit_loons.covidaid.databinding.ActivityHelpOthersBinding;
 
 public class HelpOthersActivity extends AppCompatActivity {
