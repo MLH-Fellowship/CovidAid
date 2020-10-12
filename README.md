@@ -39,10 +39,12 @@ To make things interesting and track people's inherent kindness, we have also pr
 ![](https://github.com/NitishGadangi/CovidAid/blob/master/images/ss1.jpg?raw=true)
 ![](https://github.com/NitishGadangi/CovidAid/blob/master/images/ss2.jpg?raw=true)
 ![](https://github.com/NitishGadangi/CovidAid/blob/master/images/ss3.jpg?raw=true)
+![](https://github.com/NitishGadangi/CovidAid/blob/master/images/ss0.jpg?raw=true)
 
 ## How it was built
 
 **Frontend**
+
 The app is built using Android Native SDK tools with the following libraries
 - **[ButterKnife](https://jakewharton.github.io/butterknife/)** - for View Binding
 - **[Okhttp](https://square.github.io/okhttp/)** - as android Http Client
