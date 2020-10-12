@@ -43,6 +43,7 @@ To make things interesting and track people's inherent kindness, we have also pr
 ## How it was built
 
 **Frontend**
+
 The app is built using Android Native SDK tools with the following libraries
 - **[ButterKnife](https://jakewharton.github.io/butterknife/)** - for View Binding
 - **[Okhttp](https://square.github.io/okhttp/)** - as android Http Client
