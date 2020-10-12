@@ -1,28 +1,52 @@
-# CovidAid
+<p align="center">
+  <a href="#">
+    <img src="https://github.com/NitishGadangi/CovidAid/blob/master/images/logo2.png?raw=true" alt="Logo" width="120" height="120">
+  </a>
 
-## The elevator pitch
-A mobile application where people can make requests asking for help, and other members of the community close to them can accept any request and provide help.
+  <h3 align="center">CovidAid App</h3>
+
+  <p align="center">
+    A community driven platform where the users can request for help or engage with people who need help and then extend their help and support.
+    <br />
+    <a href="#download-from-here">Download</a>
+    .
+    <a href="https://github.com/NitishGadangi/CovidAid/issues">Report Bug</a>
+    .
+   <a href="#contribution">Contribute</a>
+  
+  <h4 align="center">Check out the Demo Video 📽 on <a href="">Youtube</a></h3>
+  <h5 align="center">Made with ❤️ by  <a href="https://github.com/awalvie">Vishesh</a> , <a href="https://github.com/utsavcoding">Utsav</a> , <a href="https://nitishgadangi.github.io/">Nitish</a></h3>
+  <h5 align="center">MLH Fellowship Pod 1.0.2</h3>
+  </p>
+</p>
+</br>
+
 
 ## Inspiration
-COVID19 has drastically affected people's lives around the globe. There are a lot of people in need of help but don't have a platform to effectively communicate their requests to the community around them. For people affected by the virus it becomes twice as worse because they would be in isolation and cannot communicate if they are in distress with others. This problem is compounded in smaller cities, where you usually don't have service for grocery or medicine delivery apps.
+COVID19 has drastically affected people's lives around the globe. There are a lot of people in need of help but don't have a platform to effectively communicate their requests to the community around them. For people affected by the virus it becomes twice as worse because they would be in isolation and cannot communicate if they are in need of help (which requires them to step out). This problem is compounded in smaller cities, where you usually don't have service for grocery or medicine delivery apps.
 
-In these trying times, as we come together to battle this virus, there have been countless instances of people reaching out and helping each other. The objective with CovidAid is to facilitate the ease with with someone in need of help can request for help and can be helped out by others.
+The objective with CovidAid is to facilitate the ease with which someone in need of help can request for help and can be helped out by others. It was our aim to recreate this sense of community within a digital world with dedicated functions for specific tasks so as to make the experience accessible to all.
 
 
 ## What it does
-CovidAid is a community-driven platform for the people. On it, people looking to help others can locate people that need help and fulfill their request with mutual consent, based on their location and proximity. Every user can do either of two things:
+CovidAid is a community-driven platform for the people, where helpful people can locate the help-seeking people and fulfill their request with mutual consent, based on the location and proximity. It provides every user with basically two main roles,they can choose from:
 1. **Ask for help** - This is for help-seekers. They can make requests by filling out details of what they would like help with and each new request is then posted onto a timeline for everyone to see.
 2. **Like to help** - This is for people who would like to help. They will be presented with a number of active requests, which they can look through and accept as they see fit.
 
-For each request they complete, helpers will score points and the top helpers can be seen on the leaderboard.
+To make things interesting and track people's inherent kindness, we have also provided a leaderboard where users can check their _kindness points_, which is something you earn when you help others.
 
 ## Screenshots
-{Nitish}
+{Coming Soon}
 
 ## How it was built
 
 **Frontend**
-{Nitish}
+The app is built using Android Native SDK tools with the following libraries
+- **[ButterKnife](https://jakewharton.github.io/butterknife/)** - for View Binding
+- **[Okhttp](https://square.github.io/okhttp/)** - as android Http Client
+- **[OneSignal](https://onesignal.com/)** - Easy Firebase Notifications
+- **[Gson](https://github.com/google/gson)** - to convert Java Objects into JSON and back
+- **[TextFieldBoxes](https://github.com/HITGIF/TextFieldBoxes)** - Material EditText Views
 
 **Backend**
 - Poetry (dependency management)
@@ -53,11 +77,6 @@ For each request they complete, helpers will score points and the top helpers ca
 
 ## What we learnt
 
-**Frontend**
-{Nitish}
-
-**Backend**
-
 - How to setup a sensible project structure with Flask.
 - Learnt to implement REST APIs for backend services using Flask.
 - Also learnt to use SQLAlchemy as the ORM tool, which makes it easy to work with database.
@@ -70,3 +89,20 @@ For each request they complete, helpers will score points and the top helpers ca
 - Implement notifications for the users whenever helper accept the request to help-seekers. This notification will be triggered for both the parties.
 - Provide a feedback form when requests are completed.
 - If multiple helpers accept a request, give the help-seeker the option to choose, using star ratings.
+- Add options to filter and search for the Help Requests, based on geographic location.
+
+## Download from here:
+
+**Will be available on Playstore Soon**
+  
+<h4>You can access all the releases from <a href="https://github.com/NitishGadangi/CovidAid/releases">Releases tab</a></h3>
+
+## Contribution
+**Contributions are always welcome 💕**
+
+Follow [instructions mentioned here](https://github.com/NitishGadangi/CovidAid/tree/master/App) to setup Environment get started with App development.
+
+Also, You can use [these instructions](https://github.com/NitishGadangi/CovidAid/tree/master/backend) to setup environment for Backend development.
+
+And you can find the [Documentation for RestApi here](https://github.com/NitishGadangi/CovidAid/blob/master/backend/docs/api.md).
+
