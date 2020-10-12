@@ -1,4 +1,4 @@
-package com.bit_loons.covidaid;
+package com.bit_loons.covidaid.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.bit_loons.covidaid.Activities.HomeActivity;
 import com.bit_loons.covidaid.databinding.ActivityHistoryBinding;
 
 public class HistoryActivity extends AppCompatActivity {

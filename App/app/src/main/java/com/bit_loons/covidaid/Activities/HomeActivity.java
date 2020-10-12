@@ -9,7 +9,6 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bit_loons.covidaid.HistoryActivity;
 import com.bit_loons.covidaid.databinding.ActivityHomeBinding;
 
 public class HomeActivity extends AppCompatActivity {
