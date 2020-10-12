@@ -4,9 +4,10 @@
 A mobile application where people can make requests asking for help, and other members of the community close to them can accept any request and provide help.
 
 ## Inspiration
-The idea stems from an experience a fellow teammate had. His neighbors got infected with COVID19 and 3 out of the 4 members of the household had to be admitted to a hospital at a different location, leaving the oldest member of the household alone and without the ability to ask for help from the community (because he was supposed to be in isolation) in case he needed anything.
+COVID19 has drastically affected people's lives around the globe. There are a lot of people in need of help but don't have a platform to effectively communicate their requests to the community around them. For people affected by the virus it becomes twice as worse because they would be in isolation and cannot communicate if they are in distress with others. This problem is compounded in smaller cities, where you usually don't have service for grocery or medicine delivery apps.
 
-Globally, similar problems are being faced, be it due to the virus or because of the disruption to modern life, a lot of people are in need of help and have no way to communicate their problems to the community to get the help they need.
+In these trying times, as we come together to battle this virus, there have been countless instances of people reaching out and helping each other. The objective with CovidAid is to facilitate the ease with with someone in need of help can request for help and can be helped out by others.
+
 
 ## What it does
 CovidAid is a community-driven platform for the people. On it, people looking to help others can locate people that need help and fulfill their request with mutual consent, based on their location and proximity. Every user can do either of two things:
