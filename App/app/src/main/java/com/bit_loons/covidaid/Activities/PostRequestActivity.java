@@ -125,6 +125,7 @@ public class PostRequestActivity extends AppCompatActivity {
 
     private void nextActivity() {
         startActivity(new Intent(PostRequestActivity.this, HomeActivity.class));
+        this.finish();
     }
 
     private void makeToast(String text){
